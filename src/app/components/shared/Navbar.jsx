@@ -22,7 +22,7 @@ const Navbar = () => {
         </>
     )
   return (
-    <nav className="bg-[#0C0D10] border border-b-[#1C1F26]">
+    <nav className="bg-[#0C0D10]" style={{ borderBottom: "1px solid #1C1F26" }}> 
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -61,7 +61,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end flex gap-6">
-          <Link href={"/my-plan"} className="text-[#D1D5DB] font-medium font-inter text-[12px]">Plan <span className="bg-[#C2F800] text-black text-[11px] font-bold font-inter rounded-[50px] px-1 py-0.5">0</span></Link>
+          <Link href={"/my-plan"} className="text-[#D1D5DB] font-medium font-inter text-[12px]">Plan <span className="bg-[#ccff00] text-black text-[11px] font-bold font-inter rounded-[50px] px-1 py-0.5">0</span></Link>
           <Link href={"/my-plan"} className="text-[#9CA3AF] font-medium font-inter text-[12px]">Saved <span className=" text-white text-[11px] font-bold font-inter rounded-[50px] border border-[#2D313B] px-1 py-0.5">0</span></Link>
         </div>
       </div>
