@@ -2,6 +2,7 @@ import BannerSection from "@/components/homepage/banner";
 import WorkoutCards from "@/components/homepage/WorkoutCards";
 
 
+
 export default function Home() {
   return (
     <div>
