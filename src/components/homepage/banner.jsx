@@ -5,7 +5,7 @@ import bannerImg from "../../assets/banner.png";
 
 const BannerSection = () => {
   return (
-    <div className="container mx-auto mt-12 mb-16 md:px-0 px-4">
+    <div className="container mx-auto mt-12 mb-16 lg:px-0 px-4">
       <div className="p-14 bg-[#15171D] rounded-2xl border border-[#222630] grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
         {/* Text Area */}
         <div className="max-w-xl">
@@ -23,7 +23,6 @@ const BannerSection = () => {
             BROWSE WORKOUTS
           </Link>
         </div>
-
         {/* Image Area */}
         <div className="flex justify-center">
           <Image
