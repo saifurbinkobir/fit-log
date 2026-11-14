@@ -2,6 +2,7 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import PlanProvider from "@/context/PlanContext";
 
 
 const inter = Inter({
@@ -26,10 +27,12 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#0f1115]">
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
-        </body>
+        <PlanProvider>
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
+        </PlanProvider>
+      </body>
     </html>
   );
 }
