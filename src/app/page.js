@@ -1,7 +1,6 @@
 import BannerSection from "@/components/homepage/banner";
 import WorkoutCards from "@/components/homepage/WorkoutCards";
-
-
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -16,7 +15,18 @@ export default function Home() {
           Twelve lifts covering every major muscle group.
         </p>
         {/* All Workouts */}
-        <WorkoutCards></WorkoutCards>
+        <Suspense
+          fallback={
+            <div className="flex flex-col items-center justify-center py-20 gap-3">
+              <span className="loading loading-spinner loading-lg text-[#C2F800]"></span>
+              <p className="text-white font-inter text-sm">
+                Loading workouts...
+              </p>
+            </div>
+          }
+        >
+          <WorkoutCards />
+        </Suspense>
       </div>
     </div>
   );

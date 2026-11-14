@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🏋️ FitLog — Workout Library
+Next.js
+React
+Tailwind CSS
+daisyUI
+License
+FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up. Browse a curated library of twelve lifts covering every major muscle group, dive into full workout details, build today's plan, save lifts for later, and track your session metrics live — all wrapped in a bold, accent-driven dark UI.
+🚀 Live Demo
+<!-- Add your deployed URL here — e.g. https://fit-log.vercel.app -->
+🛠️ Technologies Used
+Technology	Purpose
+Next.js 16 (App Router)	React framework — server components, file-based routing
+React 19	UI library
+Tailwind CSS v4	Utility-first styling (CSS-first config)
+daisyUI 5	Component classes (navbar, dropdown, spinner, toast styling)
+react-toastify	Toast notifications
+react-icons	Icon set (stats, buttons, chevrons)
+next/image	Optimized remote workout images
+FitLog REST API	Remote workout data (api.abcz.workers.dev/api/fitlog)
+✨ Key Features
+1. Workout Library Grid — Twelve exercises fetched server-side from a remote API, displayed in a responsive 3×4 grid with category pills, equipment, duration, calories, and rating on every card.
+2. Detailed Workout Pages — Each lift opens a dedicated detail page with a large illustration, key specs panel (equipment, difficulty, sets, reps, duration, calories, rating), and step-by-step instructions.
+3. Plan & Save with Live Counters — Add any workout to "Today's Plan" or "Save for later" from the detail page; the navbar's Plan and Saved badges update instantly, with duplicate-add protection.
+4. Session Metrics That Update Live — The My Plan page tracks Exercises, Minutes, and Calories in real time as lifts are added, marked done, or removed — across both plan tabs with a Sort By dropdown (Duration / Calories / Rating).
+5. Polished States Everywhere — Toast notifications on every action, a loading animation while workout data fetches, a friendly empty state when your plan is bare, and a themed 404 page for unknown routes.
+🏁 Getting Started
+# Clone the repository
+git clone https://github.com/your-username/fit-log.git
 
-## Getting Started
+# Install dependencies
+npm install
 
-First, run the development server:
-
-```bash
+# Run the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000 to view the app.
+⚠️ The workout data is fetched from a remote API, so an internet connection is required for the library and detail pages to render.
+📁 Project Structure
+src/
+├── app/                  # App Router pages (home, my-plan, exercise/[id], not-found)
+│   └── components/shared/ # Navbar, Footer
+├── components/           # Page components (banner, cards, plan cards, buttons)
+└── context/              # PlanContext — plan/saved state + actions
+© 2026 FitLog — Workout Library. Train hard, log honest. 💪
