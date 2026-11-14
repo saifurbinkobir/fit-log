@@ -9,8 +9,17 @@ import EmptyPlanCard from "@/components/EmptyPlanCard";
 
 const MyPlanPage = () => {
   const [activeTab, setActiveTab] = useState("today");
-  const { todaysPlan, savedWorkouts } = useContext(PlanContext);
+  const { todaysPlan, savedWorkouts, removeFromToday, removeFromSaved } =
+    useContext(PlanContext);
   const currentList = activeTab === "today" ? todaysPlan : savedWorkouts;
+
+  const handleRemoveToday = (id) => {
+    removeFromToday(id);
+  };
+
+  const handleRemoveSaved = (id) => {
+    removeFromSaved(id);
+  };
 
   return (
     <div className="container mx-auto mb-16 lg:px-0 px-4">
@@ -33,13 +42,19 @@ const MyPlanPage = () => {
         <div className="py-4 md:py-0 md:px-6">
           <p className="text-[#8A92A0] font-inter text-[12px]">Minutes</p>
           <p className="text-white font-oswald text-[32px] font-bold mt-1">
-            {currentList.reduce((total, current) => total + (Number(current.duration) || 0), 0)}
+            {currentList.reduce(
+              (total, current) => total + (Number(current.duration) || 0),
+              0,
+            )}
           </p>
         </div>
         <div className="pt-4 md:pt-0 md:pl-6">
           <p className="text-[#8A92A0] font-inter text-[12px]">Calories</p>
           <p className="text-white font-oswald text-[32px] font-bold mt-1">
-            {currentList.reduce((total, current) => total + (Number(current.caloriesBurned) || 0), 0)}
+            {currentList.reduce(
+              (total, current) => total + (Number(current.caloriesBurned) || 0),
+              0,
+            )}
           </p>
         </div>
       </div>
@@ -77,7 +92,7 @@ const MyPlanPage = () => {
             <EmptyPlanCard />
           ) : (
             todaysPlan.map((workout, index) => (
-              <TodaysPlanCard key={index} workout={workout} />
+              <TodaysPlanCard key={index} workout={workout} onRemove={() => handleRemoveToday(workout.id)}/>
             ))
           )}
         </div>
@@ -89,7 +104,7 @@ const MyPlanPage = () => {
             <EmptyPlanCard />
           ) : (
             savedWorkouts.map((workout, index) => (
-              <SavedPlanCard key={index} workout={workout} />
+              <SavedPlanCard key={index} workout={workout} onRemove={() => handleRemoveSaved(workout.id)}/>
             ))
           )}
         </div>

@@ -4,8 +4,9 @@ import { CiClock2 } from "react-icons/ci";
 import { GiSolidLeaf } from "react-icons/gi";
 import { FaRegStar, FaCheck } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
+import Link from "next/link";
 
-const TodaysPlanCard = ({ workout }) => {
+const TodaysPlanCard = ({ workout, onRemove }) => {
   return (
     <div className="bg-[#14171E] border border-[#232732] rounded-xl p-5 flex items-center justify-between">
       {/* Image and Text area */}
@@ -38,26 +39,26 @@ const TodaysPlanCard = ({ workout }) => {
               <span className="text-[#CCFF00]">
                 <GiSolidLeaf />
               </span>
-              {workout.calories} kcal
+              {workout.caloriesBurned} kcal
             </p>
             <p className="text-[#9CA3AF] font-inter text-[16px] flex items-center gap-2">
               <span className="text-[#CCFF00]">
                 <FaRegStar />
               </span>
-              {workout.stars} stars
+              {workout.rating} stars
             </p>
           </div>
         </div>
       </div>
       {/* Action Buttons */}
       <div className="flex gap-3 items-center">
-        <button className=" text-white font-inter text-[12px] font-normal px-4.5 py-2.5 rounded-[30px] border border-[#374151] hover:border-[#ffffff]">
+        <Link href={`/exercise/${workout.id}`} className=" text-white font-inter text-[12px] font-normal px-4.5 py-2.5 rounded-[30px] border border-[#374151] hover:border-[#ffffff]">
           View Details
-        </button>
+        </Link>
         <button className=" text-[#000000] bg-[#CCFF00] font-inter text-[12px] font-normal px-4.5 py-2.5 rounded-[30px] flex items-center gap-2">
           <FaCheck /> Mark as Done
         </button>
-        <button className="text-[#6B7280]">
+        <button onClick={onRemove} className="text-[#6B7280]">
           <RxCross1 />
         </button>
       </div>

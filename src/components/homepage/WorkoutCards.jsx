@@ -48,10 +48,10 @@ const WorkoutCards = async () => {
                   <CiClock2 /> {workOut.duration} mins
                 </p>
                 <p className="text-[#9CA3AF] font-inter text-[16px] flex items-center gap-2">
-                  <GiSolidLeaf /> {workOut.calories} kcal
+                  <GiSolidLeaf /> {workOut.caloriesBurned} kcal
                 </p>
                 <p className="text-[#9CA3AF] font-inter text-[16px] flex items-center gap-2">
-                  <FaRegStar /> {workOut.stars} stars
+                  <FaRegStar /> {workOut.rating} stars
                 </p>
               </div>
             </div>
