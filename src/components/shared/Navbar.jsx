@@ -11,16 +11,20 @@ const Navbar = () => {
     const { todaysPlan, savedWorkouts } = useContext(PlanContext);
     const menuItem = (
         <>
-            <li className={`font-inter text-[12px] font-medium ${
-            pathname === "/"
-              ? "bg-[#1A2312] rounded-box text-[#C2F800]"
-              : "text-[#9CA3AF]"
-          }`}><Link href={"/"}>Workout</Link></li>
-            <li className={`font-inter text-[12px] font-medium ${
-            pathname === "/my-plan"
-              ? "bg-[#1A2312] rounded-[99px] text-[#C2F800]"
-              : "text-[#9CA3AF]"
-          }`}><Link href={"/my-plan"}>My Plan</Link></li>
+            <li>
+                <Link href="/" className={`font-inter text-[12px] font-medium rounded-[99px] ${
+                    pathname === "/"
+                        ? "bg-[#1A2312] text-[#C2F800] hover:bg-[#1A2312] hover:text-[#C2F800]"
+                        : "text-[#9CA3AF] hover:text-white"
+                }`}>Workout</Link>
+            </li>
+            <li>
+                <Link href="/my-plan" className={`font-inter text-[12px] font-medium rounded-[99px] ${
+                    pathname === "/my-plan"
+                        ? "bg-[#1A2312] text-[#C2F800] hover:bg-[#1A2312] hover:text-[#C2F800]"
+                        : "text-[#9CA3AF] hover:text-white"
+                }`}>My Plan</Link>
+            </li>
         </>
     )
   return (
@@ -48,7 +52,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={-1}
-              className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-[#0C0D10]"
+              className="menu menu-sm dropdown-content rounded-[99px] z-1 mt-3 w-52 p-2 shadow bg-[#0C0D10]"
             >
               {menuItem}
             </ul>
