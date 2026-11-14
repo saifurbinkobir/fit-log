@@ -3,6 +3,7 @@ import React from "react";
 import { GrPlan } from "react-icons/gr";
 import { CiBookmark } from "react-icons/ci";
 import AddToTodayButton from "@/components/AddToTodayButon";
+import SaveForLaterButton from "@/components/SaveForLaterButton";
 
 
 const getWorkoutDetails = async (id) => {
@@ -118,7 +119,7 @@ const SingleWorkoutPage = async ({ params }) => {
 
           <div className="flex items-center flex-wrap gap-4 mt-9">
               <AddToTodayButton workout={workout}/>
-              <button className="w-full md:w-auto justify-center py-3 px-6 rounded-xl border border-[#374151] hover:border-[#ffffff] text-white text-[14px] font-semibold font-inter flex items-center gap-2.5"><CiBookmark />Save for later</button>
+              <SaveForLaterButton workout={workout}/>
           </div>
         </div>
       </div>
