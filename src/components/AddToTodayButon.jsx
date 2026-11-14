@@ -2,13 +2,19 @@
 import React, { useContext } from "react";
 import { GrPlan } from "react-icons/gr";
 import { PlanContext } from "@/context/PlanContext";
+import { toast } from "react-toastify";
 
 const AddToTodayButton = ({ workout }) => {
   const { todaysPlan, setTodaysPlan } = useContext(PlanContext);
 
   const handleAddToToday = () => {
+    const exists = todaysPlan.some((item) => Number(item.id) === Number(workout.id));
+    if (exists) {
+      toast.warn("Already Added in Today's Plan");
+      return;
+    }
     setTodaysPlan([...todaysPlan, workout]);
-    alert(`Added ${workout.name} to today's plan!`);
+    toast.success(`Added ${workout.name} to today's plan!`);
   };
 
   return (

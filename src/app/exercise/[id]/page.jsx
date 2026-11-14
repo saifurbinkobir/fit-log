@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { GrPlan } from "react-icons/gr";
-import { CiBookmark } from "react-icons/ci";
 import AddToTodayButton from "@/components/AddToTodayButon";
 import SaveForLaterButton from "@/components/SaveForLaterButton";
 
@@ -38,7 +36,7 @@ const SingleWorkoutPage = async ({ params }) => {
             {workout.muscleGroups.map((group, index) => (
               <span
                 key={index}
-                className="text-[#000000] text-[11px] font-bold font-inter py-0.5 px-2.5 rounded-[30px] bg-[#C2F800]"
+                className="text-[#000000] text-[11px] font-bold font-inter py-0.5 px-2.5 rounded-[30px] bg-[#C2F800] uppercase"
               >
                 {group}
               </span>

@@ -14,7 +14,7 @@ const getWorkoutData = async () => {
 const WorkoutCards = async () => {
   const workoutData = await getWorkoutData();
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6" id="workouts">
       {workoutData.map((workOut) => {
         return (
           <Link className="border border-[#252830] hover:border-[#C2F800] rounded-xl" href={`/exercise/${workOut.id}`} key={workOut.id}>
@@ -31,7 +31,7 @@ const WorkoutCards = async () => {
                 {workOut.muscleGroups.map((group, index) => (
                   <span
                     key={index}
-                    className="text-[#000000] text-[11px] font-bold font-inter py-0.5 px-2.5 rounded-[30px] bg-[#C2F800]"
+                    className="text-[#000000] text-[11px] font-bold font-inter py-0.5 px-2.5 rounded-[30px] bg-[#C2F800] uppercase"
                   >
                     {group}
                   </span>

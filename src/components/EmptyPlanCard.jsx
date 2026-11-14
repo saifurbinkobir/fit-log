@@ -10,7 +10,7 @@ const EmptyPlanCard = () => {
         <p className="text-[#8A92A0] font-inter text-[13px] mt-1.5">
           Browse the library and add a lift to get today moving.
         </p>
-        <Link href="/" className="bg-[#C2F800] text-black font-inter text-[13px] font-bold px-6 py-2.5 rounded-full mt-5">
+        <Link href="/#workouts" className="bg-[#C2F800] text-black font-inter text-[13px] font-bold px-6 py-2.5 rounded-full mt-5">
           Go to workouts
         </Link>
       </div>

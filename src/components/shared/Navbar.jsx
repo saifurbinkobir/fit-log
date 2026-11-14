@@ -1,12 +1,14 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PlanContext } from "@/context/PlanContext";
 
 const Navbar = () => {
     const pathname = usePathname();
+    const { todaysPlan, savedWorkouts } = useContext(PlanContext);
     const menuItem = (
         <>
             <li className={`font-inter text-[12px] font-medium ${
@@ -61,8 +63,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end flex gap-6">
-          <Link href={"/my-plan"} className="text-[#D1D5DB] font-medium font-inter text-[12px]">Plan <span className="bg-[#ccff00] text-black text-[11px] font-bold font-inter rounded-[50px] px-1 py-0.5">0</span></Link>
-          <Link href={"/my-plan"} className="text-[#9CA3AF] font-medium font-inter text-[12px]">Saved <span className=" text-white text-[11px] font-bold font-inter rounded-[50px] border border-[#2D313B] px-1 py-0.5">0</span></Link>
+          <Link href={"/my-plan"} className="text-[#D1D5DB] font-medium font-inter text-[12px]">Plan <span className="bg-[#ccff00] text-black text-[11px] font-bold font-inter rounded-[50px] px-1 py-0.5">{todaysPlan.length}</span></Link>
+          <Link href={"/my-plan"} className="text-[#9CA3AF] font-medium font-inter text-[12px]">Saved <span className=" text-white text-[11px] font-bold font-inter rounded-[50px] border border-[#2D313B] px-1 py-0.5">{savedWorkouts.length}</span></Link>
         </div>
       </div>
     </nav>

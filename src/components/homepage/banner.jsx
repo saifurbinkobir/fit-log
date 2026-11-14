@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import bannerImg from "../../assets/banner.png";
+import { FaDumbbell } from "react-icons/fa6";
 
 const BannerSection = () => {
   return (
@@ -19,8 +20,8 @@ const BannerSection = () => {
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
-          <Link href="/#workouts" className="bg-[#C2F800] text-[#000000] text-[12px] font-bold font-inter py-3 px-6 text-uppercase rounded-md hover:bg-[#A8E400] transition duration-300">
-            BROWSE WORKOUTS
+          <Link href="/#workouts" className="bg-[#C2F800] text-[#000000] text-[12px] font-bold font-inter py-3 px-6 uppercase rounded-md hover:bg-[#A8E400] transition duration-300 inline-flex items-center gap-2">
+            <FaDumbbell /> BROWSE WORKOUTS
           </Link>
         </div>
         {/* Image Area */}

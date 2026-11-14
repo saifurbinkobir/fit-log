@@ -8,9 +8,9 @@ import Link from "next/link";
 
 const SavedPlanCard = ({ workout, onRemove }) => {
   return (
-    <div className="bg-[#14171E] border border-[#232732] rounded-xl p-5 flex items-center justify-between">
+    <div className="bg-[#14171E] border border-[#232732] rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between">
       {/* Image and Text area */}
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col md:flex-row md:items-center gap-4">
         {/* Image */}
         <div>
           <Image
@@ -18,7 +18,7 @@ const SavedPlanCard = ({ workout, onRemove }) => {
             alt={workout.name}
             width={400}
             height={250}
-            className="w-full h-20 object-cover rounded-xl"
+            className="w-100 md:w-full h-20 object-cover rounded-xl"
           />
         </div>
         <div>
@@ -51,7 +51,7 @@ const SavedPlanCard = ({ workout, onRemove }) => {
         </div>
       </div>
       {/* Action Buttons */}
-      <div className="flex gap-3 items-center">
+      <div className="flex mt-3 md:mt-0 gap-3 items-center">
         <Link href={`/exercise/${workout.id}`} className=" text-white font-inter text-[12px] font-normal px-4.5 py-2.5 rounded-[30px] border border-[#374151] hover:border-[#ffffff]">
           View Details
         </Link>

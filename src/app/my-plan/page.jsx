@@ -6,19 +6,32 @@ import { PlanContext } from "@/context/PlanContext";
 import TodaysPlanCard from "@/components/TodaysPlanCard";
 import SavedPlanCard from "@/components/SavedPlanCard";
 import EmptyPlanCard from "@/components/EmptyPlanCard";
+import { toast } from "react-toastify";
 
 const MyPlanPage = () => {
   const [activeTab, setActiveTab] = useState("today");
-  const { todaysPlan, savedWorkouts, removeFromToday, removeFromSaved } =
-    useContext(PlanContext);
+  const {
+    todaysPlan,
+    savedWorkouts,
+    markAsDone,
+    removeFromToday,
+    removeFromSaved,
+  } = useContext(PlanContext);
   const currentList = activeTab === "today" ? todaysPlan : savedWorkouts;
 
-  const handleRemoveToday = (id) => {
-    removeFromToday(id);
+  const handleMarkAsDone = (id, workoutName) => {
+    markAsDone(id);
+    toast.success(`Congratulations on completing ${workoutName}!`);
   };
 
-  const handleRemoveSaved = (id) => {
+  const handleRemoveToday = (id, workoutName) => {
+    removeFromToday(id);
+    toast.success(`${workoutName} Removed from Today's Plan list`);
+  };
+
+  const handleRemoveSaved = (id, workoutName) => {
     removeFromSaved(id);
+    toast.success(`${workoutName} Removed from Saved list`);
   };
 
   return (
@@ -92,7 +105,16 @@ const MyPlanPage = () => {
             <EmptyPlanCard />
           ) : (
             todaysPlan.map((workout, index) => (
-              <TodaysPlanCard key={index} workout={workout} onRemove={() => handleRemoveToday(workout.id)}/>
+              <TodaysPlanCard
+                key={index}
+                workout={workout}
+                onMarkAsDone={() => {
+                  if (!workout.completed) {
+                    handleMarkAsDone(workout.id, workout.name);
+                  }
+                }}
+                onRemove={() => handleRemoveToday(workout.id, workout.name)}
+              />
             ))
           )}
         </div>
@@ -104,7 +126,11 @@ const MyPlanPage = () => {
             <EmptyPlanCard />
           ) : (
             savedWorkouts.map((workout, index) => (
-              <SavedPlanCard key={index} workout={workout} onRemove={() => handleRemoveSaved(workout.id)}/>
+              <SavedPlanCard
+                key={index}
+                workout={workout}
+                onRemove={() => handleRemoveSaved(workout.id, workout.name)}
+              />
             ))
           )}
         </div>

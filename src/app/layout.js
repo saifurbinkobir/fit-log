@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import PlanProvider from "@/context/PlanContext";
+import { ToastContainer } from "react-toastify";
 
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <Navbar></Navbar>
           {children}
           <Footer></Footer>
+          <ToastContainer />
         </PlanProvider>
       </body>
     </html>

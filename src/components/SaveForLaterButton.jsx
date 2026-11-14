@@ -2,13 +2,18 @@
 import React, { useContext } from "react";
 import { CiBookmark } from "react-icons/ci";
 import { PlanContext } from "@/context/PlanContext";
-
+import { toast } from "react-toastify";
 const SaveForLaterButton = ({ workout }) => {
   const { savedWorkouts, setSavedWorkouts } = useContext(PlanContext);
 
   const handleSaveForLater = () => {
+    const exists = savedWorkouts.some((item) => Number(item.id) === Number(workout.id));
+    if (exists) {
+      toast.warn("Already Added in your Saved list");
+      return;
+    }
     setSavedWorkouts([...savedWorkouts, workout]);
-    alert(`Saved ${workout.name} for later!`);
+    toast.success(`Saved ${workout.name} for later!`);
   };
 
   return (
