@@ -43,7 +43,7 @@ const WorkoutCards = async () => {
               <p className="text-[#9CA3AF] font-inter text-[16px]">
                 {workOut.equipment}
               </p>
-              <div className="border-t border-[#20242e] mt-4 pt-4.5 flex gap-4">
+              <div className="border-t border-[#20242e] mt-4 pt-4.5 flex flex-wrap gap-4">
                 <p className="text-[#9CA3AF] font-inter text-[16px] flex items-center gap-2">
                   <CiClock2 /> {workOut.duration} mins
                 </p>

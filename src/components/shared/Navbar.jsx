@@ -18,7 +18,7 @@ const Navbar = () => {
           }`}><Link href={"/"}>Workout</Link></li>
             <li className={`font-inter text-[12px] font-medium ${
             pathname === "/my-plan"
-              ? "bg-[#1A2312] rounded-box text-[#C2F800]"
+              ? "bg-[#1A2312] rounded-[99px] text-[#C2F800]"
               : "text-[#9CA3AF]"
           }`}><Link href={"/my-plan"}>My Plan</Link></li>
         </>

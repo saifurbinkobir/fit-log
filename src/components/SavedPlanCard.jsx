@@ -28,7 +28,7 @@ const SavedPlanCard = ({ workout, onRemove }) => {
           <p className="text-[#8A92A0] font-inter text-[14px] my-0.5">
             {workout.equipment}
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-4">
             <p className="text-[#9CA3AF] font-inter text-[16px] flex items-center gap-2">
               <span className="text-[#CCFF00]">
                 <CiClock2 />

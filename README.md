@@ -5,8 +5,9 @@ Tailwind CSS
 daisyUI
 License
 FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up. Browse a curated library of twelve lifts covering every major muscle group, dive into full workout details, build today's plan, save lifts for later, and track your session metrics live — all wrapped in a bold, accent-driven dark UI.
-🚀 Live Demo
-<!-- Add your deployed URL here — e.g. https://fit-log.vercel.app -->
+
+🚀 Live Demo:  https://fit-log-flax-psi.vercel.app/
+
 🛠️ Technologies Used
 Technology	Purpose
 Next.js 16 (App Router)	React framework — server components, file-based routing

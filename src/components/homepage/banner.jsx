@@ -7,13 +7,13 @@ import { FaDumbbell } from "react-icons/fa6";
 const BannerSection = () => {
   return (
     <div className="container mx-auto mt-12 mb-16 lg:px-0 px-4">
-      <div className="p-14 bg-[#15171D] rounded-2xl border border-[#222630] grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
+      <div className="p-8 md:p-14 bg-[#15171D] rounded-2xl border border-[#222630] grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
         {/* Text Area */}
         <div className="max-w-xl">
           <p className="text-[#C2F800] font-bold text-inter text-[11px] uppercase">
             WORKOUT LIBRARY
           </p>
-          <h2 className="text-white text-[60px] font-extrabold font-oswald my-5">
+          <h2 className="text-white text-[38px] md:text-[60px] font-extrabold font-oswald my-5">
             TRAIN WITH INTENT. LOG EVERY SET.
           </h2>
           <p className="text-[#9CA3AF] font-inter text-[16px] mb-7">
